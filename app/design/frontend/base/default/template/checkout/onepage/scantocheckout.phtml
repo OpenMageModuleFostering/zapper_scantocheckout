@@ -1,0 +1,26 @@
+<?php // if enabled then show else exit ?>
+
+<form action="<?php echo $this->getUrl('checkout/onepage/saveScantocheckout') ?>" method="post" id="co-scantocheckout-form">
+<fieldset>
+    <div class="block-content" id="scan_to_checkout" style="text-align: center;"><?php Mage::helper('scantocheckout')->render(1); ?></div>
+    <?php if($this->getLayout()->createBlock('cms/block')->setBlockId('scantocheckout_help')->toHtml() !== '' ) : ?>
+     <div class="scantocheckout-help">
+        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('scantocheckout_help')->toHtml(); ?>
+    </div>
+    <?php endif; ?>
+</fieldset>
+</form>
+
+<div class="row-fluid form-buttons btn-only" id="scantocheckout-buttons-container">
+    <button type="button" class="button" onclick="scantocheckout.save()"><?php echo $this->__('Or Click Here To Checkout The Slow Way') ?></button>
+    <span id="scantocheckout-please-wait" class="please-wait" style="display:none;">
+        <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" alt="" class="v-middle" /> <?php echo $this->__('Loading next step...') ?>
+    </span>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var scantocheckout = new Scantocheckout('co-scantocheckout-form', '<?php echo $this->getUrl('checkout/onepage/saveScantocheckout') ?>');
+    var scantocheckoutForm = new VarienForm('co-scantocheckout-form');
+//]]>
+</script>

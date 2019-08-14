@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package>
+    <name>zapper_scantocheckout</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license uri="http://www.opensource.org/licenses/gpl-license.php">GNU General Public License (GPL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Zapper for eCommerce checkout integration.&#xD;
+Frictionless checkout framework via mobile device.</summary>
+    <description>Zapper for eCommerce&#x2122; checkout is a friction-less user checkout  mechanism framework for the Magento site. This allows the visitors of the site, who use the Zapper&#x2122; mobile application, to securely and instantly checkout on the Magento site, through a mobile device. User information are securely stored on the mobile device. &#xD;
+&#xD;
+Scan, confirm card and shipping details on the mobile device and checkout.&#xD;
+&#xD;
+This is geared for developers who will integrate with other payment gateways. Zapper for eCommerce Checkout currently uses Save CC only.&#xD;
+&#xD;
+Important!&#xD;
+Zapper for eCommerce checkout requires Zapper for eCommerce Login and Register to be installed prior to installing checkout.</description>
+    <notes>Initial Release</notes>
+    <authors><author><name>Branden</name><user>Magento_OTA</user><email>branden.paine@ota.co.za</email></author></authors>
+    <date>2014-05-09</date>
+    <time>11:21:20</time>
+    <contents><target name="mageetc"><dir name="modules"><file name="Zapper_ScanToCheckout.xml" hash="f40ae7dfb3501e445ca19c5297ce477c"/></dir></target><target name="magecommunity"><dir name="Zapper"><dir name="ScanToCheckout"><dir name="Block"><dir name="Onepage"><file name="Scantocheckout.php" hash="11ce240a4a30431bc58c77331eb16ad4"/></dir><file name="Onepage.php" hash="7416fb1dd8103385fe565a3cd442d906"/><dir name="checkout"><file name="ScanToCheckout.php" hash="171b5b70f46c44eb5f54a891498f523d"/></dir></dir><dir name="Helper"><file name="Data.php" hash="4c1175f18a2d1ac782892092b50f9310"/></dir><dir name="Model"><file name="Create.php" hash="950268b8beb542ef40eca78c492ade36"/><dir name="Type"><file name="Onepage.php" hash="b9cf22e1d863e4a53ba8c782e112e78b"/></dir></dir><dir name="controllers"><file name="IndexController.php" hash="603ca45bb3193065090a2bd219396cc1"/><file name="OnepageController.php" hash="212a8d6da1a0457cc6535dccba54c403"/></dir><dir name="etc"><file name="config.xml" hash="02a8fa7e859e5f4633a41ba254a0ddcb"/><file name="system.xml" hash="95232cf4c663ade1ca60b31e775e2efd"/></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="checkout"><dir name="onepage"><file name="scantocheckout.phtml" hash="1d019b0e49dff784f1a04684ca92628f"/></dir></dir></dir><dir name="layout"><file name="scantocheckout.xml" hash="f10f24b0d221e665e16d1cbc3e7351e9"/></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php><package><name>Zapper_Scantologin</name><channel>community</channel><min>1.0.0</min><max>1.0.1</max></package></required></dependencies>
+</package>

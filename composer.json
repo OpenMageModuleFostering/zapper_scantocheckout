@@ -1,0 +1,17 @@
+{
+    "name": "OpenMageModuleFostering/zapper_scantocheckout",
+    "type": "magento-module",
+    "license": "GNU-General-Public-License-(GPL)",
+    "homepage": "",
+    "description": "Zapper for eCommerce checkout integration.
+Frictionless checkout framework via mobile device.",
+    "authors": [
+    {
+        "name": "Branden",
+        "email": "branden.paine@ota.co.za"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

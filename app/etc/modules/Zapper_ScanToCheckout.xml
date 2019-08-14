@@ -1,0 +1,12 @@
+<config>
+    <modules>
+        <Zapper_ScanToCheckout>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Payment />
+                <Zapper_ScanToLogin />
+            </depends>
+        </Zapper_ScanToCheckout>
+    </modules>
+</config>

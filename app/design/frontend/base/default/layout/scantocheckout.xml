@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+	<customer_logged_out>
+        <reference name="head">
+			<!-- <action method="addItem"><type>skin_js</type><name>js/zapper/jquery.js</name></action> -->
+			<action method="addItem"><type>skin_js</type><name>js/zapper/jquery-migrate.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/zapper/zappertech.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/zapper/zappercheckout.js</name></action> 
+			<action method="addItem"><type>skin_css</type><name>css/zapper/zappertech.css</name></action>
+        </reference>
+    </customer_logged_out>
+    
+    <customer_logged_in>
+    	<reference name="head">
+    		<action method="removeItem"><type>skin_js</type><name>../skin/frontend/base/default/js/zappertech.js</name></action>
+    		<!-- <action method="addItem"><type>skin_js</type><name>js/zapper/jquery.js</name></action> -->
+			<action method="addItem"><type>skin_js</type><name>js/zapper/jquery-migrate.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/zapper/zappercheckout.js</name></action>    	
+			<action method="addItem"><type>skin_css</type><name>css/zapper/zappertech.css</name></action>	
+		</reference>
+	</customer_logged_in>
+
+	<checkout_onepage_index>
+		<reference name="head">
+    		<action method="addItem"><type>skin_js</type><name>js/zapper/scantocheckout.js</name></action>
+		</reference>
+		<reference name="checkout.progress">
+	        <block type="checkout/onepage_progress" name="scantocheckout.progress" template="checkout/onepage/progress/scantocheckout.phtml"></block>
+	    </reference>
+	        
+		<reference name="checkout.onepage">
+			<!-- Extra step added to OnePage Checkout -->
+			<block type="scantocheckout/onepage_scantocheckout" name="checkout.onepage.scantocheckout" as="scantocheckout" after="-" template="checkout/onepage/scantocheckout.phtml"/>		
+		</reference>
+		
+	</checkout_onepage_index>
+	
+	<checkout_cart_index>
+		<reference name="head">
+    		<action method="removeItem"><type>skin_js</type><name>../skin/frontend/base/default/js/zappertech.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/zapper/jquery-migrate.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/zapper/zappercheckout.js</name></action>    	
+			<action method="addItem"><type>skin_css</type><name>css/zapper/zappertech.css</name></action>	
+		</reference>		
+	</checkout_cart_index>
+
+</layout>

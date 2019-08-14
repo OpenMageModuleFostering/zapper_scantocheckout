@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+       <Zapper_ScanToCheckout>
+          <version>1.0.0</version>
+       </Zapper_ScanToCheckout>
+    </modules>
+ 
+ 	<frontend>
+		<routers>
+			<scantocheckout>
+				<use>standard</use>
+				<args>
+					<module>Zapper_ScanToCheckout</module>
+					<frontName>scantocheckout</frontName>
+					<modules>
+                    	<Zapper_ScanToCheckout before="Mage_Checkout">Zapper_ScanToCheckout</Zapper_ScanToCheckout>
+                    </modules>
+				</args>
+			</scantocheckout>
+		</routers>
+		<layout>
+            <updates>
+                <scantocheckout>
+                    <file>scantocheckout.xml</file>
+                </scantocheckout>
+            </updates>
+        </layout>
+	</frontend>
+	
+    <global>
+		<rewrite>
+            <zapper_scantopay_onepage>
+                <from><![CDATA[#^/checkout/onepage/#]]></from>
+                <to>/scantocheckout/onepage/</to>
+            </zapper_scantopay_onepage>
+    	</rewrite> 
+	    <blocks>
+	        <scantocheckout>
+	            <class>Zapper_ScanToCheckout_Block</class>
+	        </scantocheckout>
+	        <checkout>
+            	<rewrite>
+            		<onepage>Zapper_ScanToCheckout_Block_Onepage</onepage>
+            	</rewrite>
+        	</checkout>
+	    </blocks>
+	    
+        <models>
+            <scantocheckout>
+                <class>Zapper_ScanToCheckout_Model</class>
+            </scantocheckout>
+            <rewrite>
+        		<type_onepage>Zapper_ScanToCheckout_Model_Type_Onepage</type_onepage>
+        	</rewrite>
+        </models>
+ 		<helpers>
+			<scantocheckout>
+				<class>Zapper_ScanToCheckout_Helper</class>
+			</scantocheckout>
+		</helpers>
+        <resources>
+        	
+
+            <scantocheckout_setup>
+                <setup>
+                    <module>Zapper_ScanToCheckout</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </scantocheckout_setup>
+            <scantocheckout_write>
+                <connection>
+                  <use>core_write</use>
+                </connection>
+            </scantocheckout_write>
+            <scantocheckout_read>
+               <connection>
+                <use>core_read</use>
+              </connection>
+            </scantocheckout_read>
+        </resources>
+    </global>
+ 
+    <default>
+        <payment>
+            <scantocheckout>
+                <active>0</active>
+                <model>scantocheckout/paymentMethod</model>
+                <order_status>pending</order_status>
+                <title>Zapper Scan To Pay</title>
+ 
+                <cctypes>AE,VI,MC,DI</cctypes>
+                <payment_action>authorize</payment_action>
+                <secret></secret>
+                <allowspecific>0</allowspecific>
+            </scantocheckout>
+         </payment>
+    </default>
+</config>

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<config>
+   <sections>
+        <payment>
+            <groups>
+                <scantocheckout translate="label" module="scantocheckout">
+                    <label>Zapper for eCommerce</label>
+                    <sort_order>670</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <active translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Select No to disable the Scan to Checkout functionality on your magento site</comment>
+                        </active>
+                        <sandbox translate="label">
+                            <label>Sandbox</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Put the system in Sandbox Mode.</comment>
+                        </sandbox>
+                        <title translate="label">
+                            <label>Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Title – What will be displayed in Frontend under "Payment Information".</comment>
+                        </title>
+                        <static_block translate="label">
+		                  <label>Static Block</label>
+		                  <frontend_type>text</frontend_type>
+		                  <sort_order>3</sort_order>
+		                  <show_in_default>1</show_in_default>
+		                  <show_in_website>1</show_in_website>
+		                  <show_in_store>1</show_in_store>
+						  <comment>Identify of static blog show on help link.</comment>
+		                </static_block>
+		                
+                    </fields>
+                </scantocheckout>
+            </groups>
+        </payment>
+    </sections>
+</config>
